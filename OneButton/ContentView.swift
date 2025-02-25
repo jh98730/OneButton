@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var message: String = " "
-    @State var imageString = "hand.thumbsup"
+    @State private var message: String = " "
+    @State private var imageString = "hand.thumbsup"
     
     var body: some View {
         
@@ -26,11 +26,13 @@ struct ContentView: View {
                 .fontWeight(.ultraLight)
             Spacer()
             Button("Press Me") {
-                if message == "You are Awesome!" {
-                    message = "You are Great!"
+                let checkValue = "You are Awesome!"
+                let greatValue = "You are Great!"
+                if message == checkValue {
+                    message = greatValue
                     imageString = "hand.thumbsup"
                 } else {
-                    message = "You are Awesome!"
+                    message = checkValue
                     imageString = "sun.max.fill"
                 }
             }
